@@ -12,8 +12,7 @@ module.exports = {
         "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
       }
     },
-    "host": "petstore.swagger.io",
-    "basePath": "/v2",
+    "host": "makmal-lap.herokuapp.com/",
     "tags": [
       {
         "name": "Strelisation Records",
@@ -64,41 +63,85 @@ module.exports = {
             }
           ]
         },
-        "put": {
+        // "put": {
+        //   "tags": [
+        //     "Records"
+        //   ],
+        //   "summary": "Update an existing pet",
+        //   "description": "",
+        //   "operationId": "updatePet",
+        //   "consumes": [
+        //     "application/json",
+        //     "application/xml"
+        //   ],
+        //   "produces": [
+        //     "application/xml",
+        //     "application/json"
+        //   ],
+        //   "parameters": [
+        //     {
+        //       "in": "body",
+        //       "name": "body",
+        //       "description": "Pet object that needs to be added to the store",
+        //       "required": true,
+        //       "schema": {
+        //         "$ref": "#/definitions/Pet"
+        //       }
+        //     }
+        //   ],
+        //   "responses": {
+        //     "400": {
+        //       "description": "Invalid ID supplied"
+        //     },
+        //     "404": {
+        //       "description": "Pet not found"
+        //     },
+        //     "405": {
+        //       "description": "Validation exception"
+        //     }
+        //   },
+        //   "security": [
+        //     {
+        //       "petstore_auth": [
+        //         "write:pets",
+        //         "read:pets"
+        //       ]
+        //     }
+        //   ]
+        // }
+      },
+      "/api/rekod-strelise/{id}": {
+        "get": {
           "tags": [
             "Records"
           ],
-          "summary": "Update an existing pet",
+          "summary": "GET a single record of strelisation",
           "description": "",
-          "operationId": "updatePet",
-          "consumes": [
-            "application/json",
-            "application/xml"
-          ],
-          "produces": [
-            "application/xml",
-            "application/json"
-          ],
+          "operationId": "getRecordById",
           "parameters": [
             {
-              "in": "body",
-              "name": "body",
-              "description": "Pet object that needs to be added to the store",
-              "required": true,
-              "schema": {
-                "$ref": "#/definitions/Pet"
-              }
+              name:"id",
+              in:"path",
+              schema:{
+                  $ref:"#/definitions/Records/id"
+              },
+              required:true,
+              description: "Id of minion's required",
             }
           ],
+          "produces": [
+            "application/json"
+          ],
           "responses": {
-            "400": {
-              "description": "Invalid ID supplied"
-            },
-            "404": {
-              "description": "Pet not found"
-            },
-            "405": {
-              "description": "Validation exception"
+            "200": {
+              "description": "Records object returned",
+              "content":{
+                'application/json':{
+                    schema:{
+                        $ref:"#/definitions/Records"
+                    }
+                }
+            }
             }
           },
           "security": [
@@ -109,8 +152,10 @@ module.exports = {
               ]
             }
           ]
+
+
         }
-      },
+      }
       // "/pet/findByStatus": {
       //   "get": {
       //     "tags": [
@@ -844,10 +889,12 @@ module.exports = {
         "type": "object",
         "properties": {
           "id": {
-            "type": "integer"
+            "type": "integer",
+            "example": 1
           },
           "name": {
-            "type": "string"
+            "type": "string",
+            "example": "John"
           },
           "date": {
             "type": "string",
@@ -855,9 +902,11 @@ module.exports = {
           },
           "place": {
             "type": "string",
+            "example": "London"
           },
           "location" : {
             "type": "array",
+            "example": [25.2084,55.2719],
             "items": {
                 'type' : 'number'
             }
