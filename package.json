@@ -4,7 +4,7 @@
   "description": "Strelise microservice for Lembaga Air Perak",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha"
   },
   "author": "Faizal Azman",
   "license": "ISC",
@@ -12,6 +12,9 @@
     "express": "^4.17.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "chai": "^4.3.6",
+    "mocha": "^9.2.0",
+    "nodemon": "^2.0.15",
+    "supertest": "^6.2.2"
   }
 }
