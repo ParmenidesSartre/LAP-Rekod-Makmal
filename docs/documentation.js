@@ -40,7 +40,7 @@ module.exports = {
       "/api/rekod-strelise": {
         "get": {
           "tags": [
-            "records"
+            "Records"
           ],
           "summary": "GET all records of strelisation",
           "description": "",
