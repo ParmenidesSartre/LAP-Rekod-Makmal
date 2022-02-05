@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 
 // Router Import
 const recordsRoute = require('./routes/records.routes');
+const mlRouter = require('./routes/machinelearning.routes');
 
 // Documentation using swagger
 const swaggerUi = require('swagger-ui-express');
@@ -14,6 +15,7 @@ app.use(bodyParser.json());
 
 // Routes
 app.use('/api/rekod-strelise', recordsRoute);
+app.use('/api/machine-learning', mlRouter);
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(docs));
 
