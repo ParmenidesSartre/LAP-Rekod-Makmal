@@ -912,7 +912,11 @@ module.exports = {
             }
           },
           "record": {
-            "type": "number",
+            "type": "array",
+            "example" : [10,15,20],
+            "items": {
+              "type": "number"
+            }
           }
         },
         "xml": {
