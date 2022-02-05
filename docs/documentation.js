@@ -18,19 +18,7 @@ module.exports = {
       {
         "name": "Strelisation Records",
         "description": "Records of all strelisation that has been done in the past in Larut Matang Selama"
-      },
-    //   {
-    //     "name": "store",
-    //     "description": "Access to Petstore orders"
-    //   },
-    //   {
-    //     "name": "user",
-    //     "description": "Operations about user",
-    //     "externalDocs": {
-    //       "description": "Find out more about our store",
-    //       "url": "http://swagger.io"
-    //     }
-    //   }
+      }
     ],
     "schemes": [
       "https",
@@ -55,16 +43,16 @@ module.exports = {
             {
               "in": "body",
               "name": "body",
-              "description": "Pet object that needs to be added to the store",
+              "description": "Records that will be returned",
               "required": true,
               "schema": {
-                "$ref": "#/definitions/Pet"
+                "$ref": "#/definitions/Records"
               }
             }
           ],
           "responses": {
-            "405": {
-              "description": "Invalid input"
+            "200": {
+              "description": "Records object returned"
             }
           },
           "security": [
@@ -78,7 +66,7 @@ module.exports = {
         },
         "put": {
           "tags": [
-            "pet"
+            "Records"
           ],
           "summary": "Update an existing pet",
           "description": "",
