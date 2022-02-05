@@ -1,14 +1,18 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
 
-// Routes
+// Router Import
 const recordsRoute = require('./routes/records.routes');
 
 // Documentation using swagger
 const swaggerUi = require('swagger-ui-express');
 const docs = require('./docs/documentation');
 
+// Body parser middleware
+app.use(bodyParser.json());
 
+// Routes
 app.use('/api/rekod-strelise', recordsRoute);
 
 app.use('/', swaggerUi.serve, swaggerUi.setup(docs));
