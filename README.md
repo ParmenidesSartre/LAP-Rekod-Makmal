@@ -1,9 +1,11 @@
+
 # Centralized Management System Django
 
 **DISCLAIMERS : NO REAL DATA OR FILE NAME ARE BEING USED, EVERTYHING IS RANDOMLY GENERATED**
 Live version on [heroku](https://makmal-lap.herokuapp.com/)
 
 **HOW TO RUN IT**
+After cloning from github, you should run these commands.
 ```javascript
 // Install all dependencies
 npm install
