@@ -4,7 +4,8 @@
   "description": "Strelise microservice for Lembaga Air Perak",
   "main": "server.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "start" : "node server.js"
   },
   "author": "Faizal Azman",
   "license": "ISC",
