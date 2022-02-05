@@ -5,7 +5,7 @@
 Live version on [heroku](https://makmal-lap.herokuapp.com/)
 
 **HOW TO RUN IT**
-After cloning from github, you should run these commands.
+
 ```javascript
 // Install all dependencies
 npm install
