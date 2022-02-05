@@ -1,0 +1,38 @@
+const records = [
+  {
+    id: 1,
+    name: 'Lorem Ipsum',
+    date: '2021-01-01',
+    place: 'Lorem Ipsum',
+    location: [25.2084, 55.2719],
+    'record-1': 40,
+    'record-2': 40,
+    'record-3': 40,
+    'record-4': 40,
+    'record-5': 40,
+    'record-6': 40,
+    'record-7': 40,
+    'record-8': 40,
+    'record-9': 40,
+    'record-10': 40,
+  },
+  {
+    id: 2,
+    name: 'Lorem Ipsum',
+    date: '2022-01-01',
+    place: 'Lorem Ipsum',
+    location: [25.2084, 55.2719],
+    'record-1': 30,
+    'record-2': 30,
+    'record-3': 30,
+    'record-4': 30,
+    'record-5': 30,
+    'record-6': 30,
+    'record-7': 30,
+    'record-8': 30,
+    'record-9': 30,
+    'record-10': 30,
+  },
+]
+
+module.exports = records

@@ -1,0 +1,17 @@
+{
+  "name": "strelise-api",
+  "version": "1.0.0",
+  "description": "Strelise microservice for Lembaga Air Perak",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Faizal Azman",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
