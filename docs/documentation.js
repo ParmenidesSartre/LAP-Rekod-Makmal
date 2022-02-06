@@ -158,6 +158,32 @@ module.exports = {
         
           }
         }
+      },
+      delete: {
+        tags: ['Records'],
+        summary: 'Delete an existing record of strelisation',
+        description: '',
+        operationId: 'deleteRecordById',
+        parameters: [
+          {
+            name: 'id',
+            in: 'path',
+            schema: {
+              $ref: '#/definitions/Records/id',
+            },
+            required: true,
+          }
+        ],
+        produces: ['application/json'],
+        responses: {
+          '200': {
+            description: 'Records object returned',
+            example : {
+              "status" : "success",
+              "message" : "Record has been deleted"
+            }
+          }
+        }
       }
     },
     'api/machine-learning': {
