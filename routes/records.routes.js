@@ -1,12 +1,13 @@
 // Controllers
-const recordController = require('../controllers/records.controller');
+const recordController = require('../controllers/records.controller')
 
+const recordRouter = require('express').Router()
 
-const recordRouter = require('express').Router();
+recordRouter.route('/').get(recordController.getAllRecords)
+recordRouter
+  .route('/:id')
+  .get(recordController.getRecordById)
+  .put(recordController.updateRecordById)
+  .delete(recordController.deleteRecordById)
 
-
-recordRouter.route('/').get(recordController.getAllRecords);
-recordRouter.route('/:id').get(recordController.getRecordById).put(recordController.updateRecordById);
-
-
-module.exports = recordRouter;
+module.exports = recordRouter

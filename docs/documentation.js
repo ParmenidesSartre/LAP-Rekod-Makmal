@@ -136,6 +136,29 @@ module.exports = {
           },
         ],
       },
+      put : {
+        tags: ['Records'],
+        summary: 'Update an existing record of strelisation',
+        description: '',
+        operationId: 'updateRecordById',
+        parameters: [
+          {
+            name: 'id',
+            in: 'path',
+            schema: {
+              $ref: '#/definitions/Records/id',
+            }
+          }
+        ],
+        consumes: ['application/json'],
+        produces: ['application/json'],
+        responses: {
+          '200': {
+            description: 'Records object returned',
+        
+          }
+        }
+      }
     },
     'api/machine-learning': {
       get: {

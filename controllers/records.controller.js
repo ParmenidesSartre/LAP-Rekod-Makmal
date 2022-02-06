@@ -63,3 +63,20 @@ exports.updateRecordById = (req, res) => {
     }
   }
 }
+
+
+exports.deleteRecordById = (req, res) => {
+  const record = records.find((record) => record.id === parseInt(req.params.id))
+  if (record) {
+    records.splice(records.indexOf(record), 1)
+    res.status(200).json({
+      status: 'success',
+      message : 'Record deleted',
+    })
+  } else {
+    res.status(400).json({
+      status : 'fail',
+      message : 'Record does not exist'
+    })
+  }
+}
