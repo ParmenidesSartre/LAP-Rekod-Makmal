@@ -27,7 +27,7 @@ module.exports = {
       get: {
         tags: ['Records'],
         summary: 'GET all records of strelisation',
-        description: '',
+        description: 'GET all records of strelisation',
         operationId: 'getRecords',
         consumes: ['application/json'],
         produces: ['application/json'],
@@ -46,65 +46,14 @@ module.exports = {
           '200': {
             description: 'Records object returned',
           },
-        },
-        security: [
-          {
-            petstore_auth: ['write:pets', 'read:pets'],
-          },
-        ],
+        }
       },
-      // "put": {
-      //   "tags": [
-      //     "Records"
-      //   ],
-      //   "summary": "Update an existing pet",
-      //   "description": "",
-      //   "operationId": "updatePet",
-      //   "consumes": [
-      //     "application/json",
-      //     "application/xml"
-      //   ],
-      //   "produces": [
-      //     "application/xml",
-      //     "application/json"
-      //   ],
-      //   "parameters": [
-      //     {
-      //       "in": "body",
-      //       "name": "body",
-      //       "description": "Pet object that needs to be added to the store",
-      //       "required": true,
-      //       "schema": {
-      //         "$ref": "#/definitions/Pet"
-      //       }
-      //     }
-      //   ],
-      //   "responses": {
-      //     "400": {
-      //       "description": "Invalid ID supplied"
-      //     },
-      //     "404": {
-      //       "description": "Pet not found"
-      //     },
-      //     "405": {
-      //       "description": "Validation exception"
-      //     }
-      //   },
-      //   "security": [
-      //     {
-      //       "petstore_auth": [
-      //         "write:pets",
-      //         "read:pets"
-      //       ]
-      //     }
-      //   ]
-      // }
     },
     '/api/rekod-strelise/{id}': {
       get: {
         tags: ['Records'],
         summary: 'GET a single record of strelisation',
-        description: '',
+        description: 'GET a single record of strelisation',
         operationId: 'getRecordById',
         parameters: [
           {
@@ -130,11 +79,6 @@ module.exports = {
             },
           },
         },
-        security: [
-          {
-            petstore_auth: ['write:pets', 'read:pets'],
-          },
-        ],
       },
       put : {
         tags: ['Records'],

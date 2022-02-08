@@ -2,6 +2,11 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 
+// Database
+const mongoose = require('mongoose')
+const dotenv = require('dotenv')
+
+
 // Router Import
 const recordsRoute = require('./routes/records.routes');
 const mlRouter = require('./routes/machinelearning.routes');
@@ -20,7 +25,17 @@ app.use('/api/machine-learning', mlRouter);
 app.use('/', swaggerUi.serve, swaggerUi.setup(docs));
 
 
+dotenv.config({ path: './config.env' })
 
+// Connecting to the database
+const db = process.env.DATABASE
+try {
+  mongoose.connect(db, {
+    useNewUrlParser: true
+  }).then(() => console.log('DB connection successful'))
+} catch {
+  console.log('Failure to connect to database')
+}
 
 
 

@@ -11,6 +11,7 @@ exports.getAllRecords = (req, res) => {
   })
 }
 
+// GET all strelise records by Id
 exports.getRecordById = (req, res) => {
   const record = records.find((record) => record.id === parseInt(req.params.id))
   if (!record) {
@@ -26,6 +27,7 @@ exports.getRecordById = (req, res) => {
   }
 }
 
+// Update all strelise records by Id
 exports.updateRecordById = (req, res) => {
   const record = records.find((record) => record.id === parseInt(req.params.id))
   if (!record) {
@@ -64,7 +66,7 @@ exports.updateRecordById = (req, res) => {
   }
 }
 
-
+// Delete all strelise records by Id
 exports.deleteRecordById = (req, res) => {
   const record = records.find((record) => record.id === parseInt(req.params.id))
   if (record) {
@@ -79,4 +81,9 @@ exports.deleteRecordById = (req, res) => {
       message : 'Record does not exist'
     })
   }
+}
+
+// Create new strelise record
+exports.createRecord = (req, res) => {
+  
 }
