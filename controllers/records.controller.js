@@ -1,19 +1,19 @@
 // Model
-const records = require('../models/records.model')
+const Record = require('../models/records.model')
 
 // GET all strelise records
-exports.getAllRecords = (req, res) => {
-  const allRecords = records
+exports.getAllRecords = async (req, res) => {
+  const allRecords = await Record.find({})
   res.status(200).json({
     status: 'success',
     length: allRecords.length,
-    data: records,
+    data: allRecords,
   })
 }
 
 // GET all strelise records by Id
-exports.getRecordById = (req, res) => {
-  const record = records.find((record) => record.id === parseInt(req.params.id))
+exports.getRecordById = async (req, res) => {
+  const record = await Record.find({ _id: req.params.id })
   if (!record) {
     res.status(400).json({
       status: 'fail',
@@ -28,8 +28,12 @@ exports.getRecordById = (req, res) => {
 }
 
 // Update all strelise records by Id
-exports.updateRecordById = (req, res) => {
-  const record = records.find((record) => record.id === parseInt(req.params.id))
+exports.updateRecordById = async (req, res) => {
+  const record = await Record.findOneAndUpdate(
+    { _id: req.params.id },
+    req.body,
+    { new: true, useFindAndModify: false },
+  )
   if (!record) {
     res.status(400).json({
       status: 'fail',
@@ -68,22 +72,35 @@ exports.updateRecordById = (req, res) => {
 
 // Delete all strelise records by Id
 exports.deleteRecordById = (req, res) => {
-  const record = records.find((record) => record.id === parseInt(req.params.id))
-  if (record) {
-    records.splice(records.indexOf(record), 1)
-    res.status(200).json({
-      status: 'success',
-      message : 'Record deleted',
-    })
-  } else {
-    res.status(400).json({
-      status : 'fail',
-      message : 'Record does not exist'
-    })
-  }
+  Record.findOneAndDelete({ _id: req.params.id }, (err, result) => {
+    if (err) {
+      res.status(400).json({
+        status: 'fail',
+        message: 'Record does not exist',
+      })
+    } else {
+      res.status(200).json({
+        status: 'success',
+        message: 'Record deleted',
+      })
+    }
+  })
 }
 
 // Create new strelise record
 exports.createRecord = (req, res) => {
-  
+  const record = new Record(req.body)
+  record.save((err, result) => {
+    if (err) {
+      res.status(400).json({
+        status: 'fail',
+        message: err,
+      })
+    } else {
+      res.status(200).json({
+        status: 'success',
+        message: 'New record created',
+      })
+    }
+  })
 }
