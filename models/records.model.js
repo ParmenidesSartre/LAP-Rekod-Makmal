@@ -28,6 +28,10 @@ const recordSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
+  contractorName : {
+    type: String,
+    required : [true, 'A record must have contractor name']
+  },
   date: {
     type: Date,
     required: [true, 'A record must have a date'],
@@ -40,9 +44,25 @@ const recordSchema = new mongoose.Schema({
     type: [Number],
     required : [true, 'A record must have a location']
   },
+  pipeType: {
+    type: String,
+    required : [true, 'A record must have pipe type']
+  },
+  pipeSize : {
+    type : Number,
+    required : [true, 'A record must have a pipe size']
+  },
+  pipeLength : {
+    type: Number,
+    required : [true, 'A record must have a pipe length']
+  },
   records : {
     type: [Number],
     required : [true, 'A record must have records']
+  },
+  image : {
+    type : String,
+    required : [true, 'A record must have an image']
   }
 })
 

@@ -15,6 +15,8 @@ const mlRouter = require('./routes/machinelearning.routes');
 const swaggerUi = require('swagger-ui-express');
 const docs = require('./docs/documentation');
 
+
+app.use(express.static(__dirname + '/public'));
 // Body parser middleware
 app.use(bodyParser.json());
 

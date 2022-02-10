@@ -1,3 +1,6 @@
+// Multer
+const upload = require('../controllers/utils')
+
 // Controllers
 const recordController = require('../controllers/records.controller')
 
@@ -9,5 +12,13 @@ recordRouter
   .get(recordController.getRecordById)
   .put(recordController.updateRecordById)
   .delete(recordController.deleteRecordById)
+recordRouter
+  .route('/cetak/:id')
+  .get(recordController.printRecordById)
+recordRouter
+  .route('/image/:id')
+  .post(upload,recordController.postImage)
+  .get(recordController.getImageById)
+
 
 module.exports = recordRouter
