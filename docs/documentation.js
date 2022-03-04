@@ -2,7 +2,7 @@ module.exports = {
   swagger: '2.0',
   info: {
     description:
-      'This is a rewrite of an api that i build for Lembaga Air Perak. It is previously powered by Django.',
+      'Sterelisation data usually have to be key in twice and also copy of records are being kept physically. This causes problem when trying to retrive old records. This API is built is to solve this problem. It is used to powered a React Native app that is used to reduce feedback time by water treatment plant operator.',
     version: '1.0.0',
     title: 'LAP Strelise Records API',
     contact: {
