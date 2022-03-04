@@ -21,7 +21,6 @@ module.exports = {
         'Records of all strelisation that has been done in the past in Larut Matang Selama',
     },
   ],
-  schemes: ['https', 'http'],
   paths: {
     '/api/rekod-strelise': {
       get: {
