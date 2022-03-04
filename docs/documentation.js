@@ -28,19 +28,7 @@ module.exports = {
         summary: 'GET all records of strelisation',
         description: 'GET all records of strelisation',
         operationId: 'getRecords',
-        consumes: ['application/json'],
         produces: ['application/json'],
-        parameters: [
-          {
-            in: 'body',
-            name: 'body',
-            description: 'Records that will be returned',
-            required: true,
-            schema: {
-              $ref: '#/definitions/Records',
-            },
-          },
-        ],
         responses: {
           '200': {
             description: 'Records object returned',
