@@ -33,7 +33,7 @@ module.exports = {
           '200': {
             description: 'Records object returned',
           },
-        }
+        },
       },
     },
     '/api/rekod-strelise/{id}': {
@@ -67,7 +67,7 @@ module.exports = {
           },
         },
       },
-      put : {
+      put: {
         tags: ['Records'],
         summary: 'Update an existing record of strelisation',
         description: '',
@@ -78,17 +78,16 @@ module.exports = {
             in: 'path',
             schema: {
               $ref: '#/definitions/Records/id',
-            }
-          }
+            },
+          },
         ],
         consumes: ['application/json'],
         produces: ['application/json'],
         responses: {
           '200': {
             description: 'Records object returned',
-        
-          }
-        }
+          },
+        },
       },
       delete: {
         tags: ['Records'],
@@ -103,21 +102,21 @@ module.exports = {
               $ref: '#/definitions/Records/id',
             },
             required: true,
-          }
+          },
         ],
         produces: ['application/json'],
         responses: {
           '200': {
             description: 'Records object returned',
-            example : {
-              "status" : "success",
-              "message" : "Record has been deleted"
-            }
-          }
-        }
-      }
+            example: {
+              status: 'success',
+              message: 'Record has been deleted',
+            },
+          },
+        },
+      },
     },
-    'api/machine-learning': {
+    '/api/machine-learning': {
       post: {
         tags: ['Optimal Dosage'],
         summary: 'GET optimal dosage',
@@ -138,16 +137,16 @@ module.exports = {
         responses: {
           '200': {
             description: 'Optimal dosage object returned',
-            content : {
+            content: {
               'application/json': {
                 schema: {
-                  type : 'object',
-                  example : {
-                    "dosage" : "1.5",
-                  }
-                }
-              }
-            }
+                  type: 'object',
+                  example: {
+                    dosage: '1.5',
+                  },
+                },
+              },
+            },
           },
         },
       },
