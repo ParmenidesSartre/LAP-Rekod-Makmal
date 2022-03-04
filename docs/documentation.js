@@ -117,7 +117,7 @@ module.exports = {
       },
     },
     '/api/machine-learning': {
-      get: {
+      post: {
         tags: ['Optimal Dosage'],
         summary: 'GET optimal dosage',
         description: '',
