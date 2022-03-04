@@ -118,7 +118,7 @@ module.exports = {
       }
     },
     'api/machine-learning': {
-      get: {
+      post: {
         tags: ['Optimal Dosage'],
         summary: 'GET optimal dosage',
         description: '',
@@ -863,22 +863,6 @@ module.exports = {
     //     }
     //   }
     // }
-  },
-  securityDefinitions: {
-    petstore_auth: {
-      type: 'oauth2',
-      authorizationUrl: 'http://petstore.swagger.io/oauth/dialog',
-      flow: 'implicit',
-      scopes: {
-        'write:pets': 'modify pets in your account',
-        'read:pets': 'read your pets',
-      },
-    },
-    api_key: {
-      type: 'apiKey',
-      name: 'api_key',
-      in: 'header',
-    },
   },
   definitions: {
     Records: {
